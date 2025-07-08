@@ -154,14 +154,20 @@ class _HomePageState extends State<HomePage> {
           }
 
           if (snapshot.hasError) {
-            return Center(
-              child: Text('Error: ${snapshot.error}'),
+            return Container(
+              height: MediaQuery.of(context).size.height,
+              child: Center(
+                child: Text('Error: ${snapshot.error}'),
+              ),
             );
           }
 
           if (!snapshot.hasData) {
-            return const Center(
-              child: Text('No data'),
+            return Container(
+              height: MediaQuery.of(context).size.height,
+              child: const Center(
+                child: Text('No data'),
+              ),
             );
           }
 
@@ -206,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    // height: MediaQuery.of(context).size.height,
+                    height: MediaQuery.of(context).size.height,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50),
@@ -235,17 +241,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        if (filteredSchedules.isEmpty)
-                          Center(
-                            child: Text(
-                              "No schedules found",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 16,
-                              ),
-                            ),
-                          )
-                        else
+                        
+                         
+                      
                         
                         Column(
                           children: [
@@ -387,7 +385,20 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         const SizedBox(height: 10),
-
+                    
+                        if (filteredSchedules.isEmpty)
+                           Container(
+                            
+                            child: Center(
+                              child: Text(
+                                "No schedules found",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          )else
                         
                           ListView.builder(
                             physics: const NeverScrollableScrollPhysics(),
