@@ -12,7 +12,7 @@ class ApiService {
 
   ApiService({http.Client? client}) : _client = client ?? http.Client();
 
-  // Fetching subjects
+  // Fetching subjects from api
   Future<List<SubjectModel>> fetchSubjects() async {
     try {
       final response = await _client.get(Uri.parse('$_baseUrl/subjects.php'));
@@ -32,7 +32,7 @@ class ApiService {
     }
   }
 
-  // Fetching modules
+  // Fetching modules from api
   Future<List<ModuleModel>> fetchModules(int subjectId) async {
     try {
       final response = await _client.get(Uri.parse('$_baseUrl/modules.php?subject_id=$subjectId'));
@@ -52,7 +52,7 @@ class ApiService {
     }
   }
 
-  // Fetching videos
+  // Fetching videos from api
   Future<List<VideoModel>> fetchVideos(int moduleId) async {
     try {
       final response = await _client.get(Uri.parse('$_baseUrl/videos.php?module_id=$moduleId'));
