@@ -11,6 +11,7 @@ class SubjectModel {
     required this.image,
   });
 
+ // get api datas to app from suject
   factory SubjectModel.fromJson(Map<String, dynamic> json) {
     return SubjectModel(
       id: json['id'] is int ? json['id'] : int.parse(json['id'].toString()),

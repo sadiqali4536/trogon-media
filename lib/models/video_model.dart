@@ -13,6 +13,7 @@ class VideoModel {
     required this.videoUrl,
   });
 
+ // get api datas to app from video
   factory VideoModel.fromJson(Map<String, dynamic> json) {
     return VideoModel(
       id: json['id'] is int ? json['id'] : int.parse(json['id'].toString()),

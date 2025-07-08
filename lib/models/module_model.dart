@@ -9,6 +9,7 @@ class ModuleModel {
     required this.description,
   });
 
+ // get api datas to app from module
   factory ModuleModel.fromJson(Map<String, dynamic> json) {
     return ModuleModel(
       id: json['id'] is int ? json['id'] : int.parse(json['id'].toString()),

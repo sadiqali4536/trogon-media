@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 _showAddScheduleDialog((updatedSchedules) {
                  
-                  // setState(() {});
+                  setState(() {});
                 }, schedules);
               },
               style: ElevatedButton.styleFrom(
@@ -206,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: MediaQuery.of(context).size.height * .9,
+                    // height: MediaQuery.of(context).size.height,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50),
@@ -221,8 +221,7 @@ class _HomePageState extends State<HomePage> {
                           child: TextFormField(
                             controller: searchController,
                             onChanged: (_) {
-                              // Just rebuild widget to refresh filtered schedules
-                              // setState(() {});
+                             
                             },
                             decoration: InputDecoration(
                               hintText: "Search for classes",
@@ -489,6 +488,8 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
+// to add shedules to homepage model
 class Schedule {
   final String time;
   final String title;
